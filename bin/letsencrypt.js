@@ -28,6 +28,10 @@ cli.parse({
 //, 'standalone-supported-challenges': [ false, " Supported challenges, order preferences are randomly chosen. (default: http-01,tls-sni-01)", 'string', 'http-01,tls-sni-01']
 , 'work-dir': [ false, "(ignored)", 'string', '~/letsencrypt/var/lib/' ]
 , 'logs-dir': [ false, "(ignored)", 'string', '~/letsencrypt/var/log/' ]
+, 'ftp-url': [ false, "(ignored)", 'string', '' ]
+, 'ftp-username': [ false, "(ignored)", 'string', '' ]
+, 'ftp-password': [ false, "(ignored)", 'string', '' ]
+, 'ftp-filepath-remoteroot': [ false, "(ignored)", 'string', '' ]
 });
 
 // ignore certonly and extraneous arguments
@@ -38,6 +42,9 @@ cli.main(function(_, options) {
 
   Object.keys(options).forEach(function (key) {
     var val = options[key];
+
+    //console.log('key', key);
+    //console.log('val', val);
 
     if ('string' === typeof val) {
       val = val.replace(/^~/, homedir);
@@ -62,7 +69,7 @@ cli.main(function(_, options) {
   }
 
   if (!(Array.isArray(args.domains) && args.domains.length) || !args.email || !args.agreeTos) {
-    console.error("\nUsage: letsencrypt certonly --standalone --domains example.com --email user@example.com --agree-tos");
+    console.error("\nUsage: qsletsencrypt certonly --standalone --domains example.com --email user@example.com --agree-tos");
     console.error("\nSee letsencrypt --help for more details\n");
     return;
   }
@@ -89,6 +96,9 @@ cli.main(function(_, options) {
       console.error("Try setting --config-dir '/tmp'");
       return;
     }
+
+    //console.log('args', args);
+    //return;
 
     require('../').run(args);
   });

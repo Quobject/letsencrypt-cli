@@ -20,7 +20,12 @@ module.exports.run = function (args) {
   }
 
   if (args.manual) {
-    leChallenge = require('le-challenge-manual').create({});
+    leChallenge = require('qs-le-challenge-manual').create({
+        ftpUrl: args.ftpUrl,
+      ftpUsername: args.ftpUsername,
+      ftpPassword: args.ftpPassword,
+      ftpFilepathRemoteroot: args.ftpFilepathRemoteroot
+    });
   }
   else if (args.webrootPath) {
     // webrootPath is all that really matters here

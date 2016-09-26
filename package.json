@@ -1,46 +1,34 @@
 {
-  "name": "letsencrypt-cli",
-  "version": "2.1.3",
-  "description": "CLI for node-letsencrypt modeled after the official client",
+  "name": "qs-letsencrypt-cli",
+  "version": "1.0.2",
+  "description": "fork of https://github.com/Daplie/letsencrypt-cli",
   "main": "index.js",
   "bin": {
-    "letsencrypt": "bin/letsencrypt.js",
-    "letsencrypt-node": "bin/letsencrypt.js"
+    "qsletsencrypt": "bin/letsencrypt.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Daplie/node-letsencrypt-cli.git"
+    "url": "git+https://github.com/Quobject/qs-letsencrypt-cli.git"
   },
-  "keywords": [
-    "node",
-    "nodejs",
-    "acme",
-    "boulder",
-    "letsencrypt",
-    "le",
-    "ssl",
-    "https",
-    "tls",
-    "free"
-  ],
-  "author": "AJ ONeal <aj@daplie.com> (https://daplie.com)",
+  "keywords": [],
+  "author": "Matthias Ludwig <mludwig@quobject.io>",
   "license": "(MIT OR Apache-2.0)",
   "bugs": {
-    "url": "https://github.com/Daplie/node-letsencrypt-cli/issues"
+    "url": "https://github.com/Quobject/qs-letsencrypt-cli/issues"
   },
-  "homepage": "https://github.com/Daplie/node-letsencrypt-cli",
+  "homepage": "https://github.com/Quobject/qs-letsencrypt-cli",
   "dependencies": {
     "cli": "^0.11.1",
     "homedir": "^0.6.0",
     "le-acme-core": "^2.0.5",
-    "le-challenge-manual": "^2.0.0",
     "le-challenge-standalone": "^2.0.0",
     "le-store-certbot": "^2.0.2",
     "letsencrypt": "^2.1.2",
     "localhost.daplie.com-certificates": "^1.2.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "qs-le-challenge-manual": "^1.0.1"
   }
 }
